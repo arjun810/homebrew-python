@@ -2,8 +2,8 @@ require 'formula'
 
 class Scipy < Formula
   homepage 'http://www.scipy.org'
-  url 'http://downloads.sourceforge.net/project/scipy/scipy/0.13.0/scipy-0.13.0.tar.gz'
-  sha1 '704c2d0a855dd94a341546a475362038a9664dac'
+  url 'http://downloads.sourceforge.net/project/scipy/scipy/0.13.1/scipy-0.13.1.tar.gz'
+  sha1 'a260c01c76538e9c1f50eecdec41529ec721b554'
   head 'https://github.com/scipy/scipy.git'
 
   depends_on :python => :recommended
@@ -31,6 +31,7 @@ class Scipy < Formula
     python do
       # The Accelerate.framework uses a g77 ABI
       ENV.append 'FFLAGS', '-ff2c' unless build.with? 'openblas'
+      ENV.append 'CPPFLAGS', '-D__ACCELERATE__' unless build.with? 'openblas'
 
       # gfortran is gnu95
       system python, "setup.py", "build", "--fcompiler=gnu95", "install", "--prefix=#{prefix}"
