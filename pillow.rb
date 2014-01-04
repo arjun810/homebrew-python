@@ -2,7 +2,7 @@ require 'formula'
 
 class Pillow < Formula
   homepage 'https://github.com/python-imaging/Pillow'
-  url 'https://github.com/python-imaging/Pillow/archive/2.1.0.tar.gz'
+  url 'https://github.com/python-imaging/Pillow/archive/2.3.0.tar.gz'
   sha1 'e948dbfd4902de3dbf8bbc9556033f76ce906a7f'
   head 'https://github.com/python-imaging/Pillow.git'
 
